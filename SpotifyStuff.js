@@ -5,6 +5,7 @@ function Main() {
         URLList[i] = URLList[i].substring(14, URLList[i].length);
     }
     track_list = generateTrackList(URLList, []);
+    alert(track_list)
 }
 
 
@@ -19,7 +20,7 @@ function generateTrackList(songs,trackList) {
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
         trackList += printJason(jasonText);
-        //return generateTrackList(songs.substring(51,songs.length), trackList);
+        return generateTrackList(songs.substring(51,songs.length), trackList);
     } else {
         for (i = 0; i < songs.length; i++) {
             songtxt += songs[i] + ',';
@@ -28,7 +29,7 @@ function generateTrackList(songs,trackList) {
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
         trackList += printJason(jasonText);
-        //return trackList;
+        return trackList;
     }
 }
 
@@ -64,14 +65,16 @@ function urlLoad(url, token){
 
 function printJason(jasonText){
     trackList = [];
-    var totalTracks = JSON.parse(jasonText).tracks;
+    var totalJason = JSON.parse(jasonText)
+    var totalTracks = totalJason.tracks
     for (i = 0; i < totalTracks.length; i++){
-        // var artist = JSON.parse(totalTracks).artists;
-        // var artistName = JSON.parse(artist[0]).name;
-        // var trackName = JSON.parse(totalTracks).name;
-        // trackList.push(artistName + ' - ' + trackName);
+        var thisTrack = totalTracks[i]
+        var artist = thisTrack.artists[0];
+        var artistName = artist.name;
+        var trackName = thisTrack.name;
+        trackList.push(artistName + ' - ' + trackName);
     }
-    alert(jasonText);
+    return trackList;
 }
 //
 
