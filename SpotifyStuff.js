@@ -1,8 +1,8 @@
-//hello
+//test
 function Main() {
     var URLS = document.getElementById("SpotifyURLS").value;
     var URLList = URLS.split(" ");
-    for (i = 0; i < URLList.length; i++) { 
+    for (i = 0; i < URLList.length; i++) {
         URLList[i] = URLList[i].substring(14, URLList[i].length);
     }
     track_list = generateTrackList(URLList, []);
@@ -23,7 +23,7 @@ function generateTrackList(songs,trackList) {
     } else {
         for (i = 0; i < songs.length; i++) {
             songtxt += songs[i] + ',';
-        } 
+        }
         songtxt = songtxt.substring(0,songtxt.length - 1);
         url = urlBuild(songtxt);
         jasonText = urlLoad(url);
@@ -82,7 +82,7 @@ function urlLoad(url) {
 
 // function main() {
 //     //try:
-        
+
 //     //except FileNotFoundError:
 //         //print('please have a valid songs.txt file')
 // }
@@ -127,6 +127,3 @@ function urlLoad(url) {
 //         print('creating output.txt...')
 //         output_file = open('output.txt', 'w')
 //         return output_file
-
-
-    
