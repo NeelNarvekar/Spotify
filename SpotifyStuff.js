@@ -51,11 +51,12 @@ function urlLoad(url) {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
-        alert('The ResponseText is '+xmlhttp.responseText);
+            var data = xmlhttp.responseText;
+            token = JSON.parse(data).access_token;
+            alert(token);
         }
     }
-    //token = JSON.parse(data);
-    //alert(token['access_token']);
+
 }
 
 
