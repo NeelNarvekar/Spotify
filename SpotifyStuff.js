@@ -46,7 +46,8 @@ function urlLoad(url) {
     var client_secret = '79689b652261464f8c718b4613369ab2';
     alert(client_secret);
     var auth_req64 = window.btoa(client_id + ":"+ client_secret);
-    xmlhttp.setRequestHeader("Authorization", "Basic " + auth_req64);
+    xmlhttp.setRequestHeader("Authorization", "Basic ZDgyZDFlZTdmZTYwNGI1NmFjODAwYTRlOWY4NDc3ZTA6Nzk2ODliNjUyMjYxNDY0ZjhjNzE4YjQ2MTMzNjlhYjI=");
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlhttp.send("grant_type=client_credentials");
 }
 //     var data = xmlhttp.responseText;
@@ -73,7 +74,7 @@ function urlLoad(url) {
 //     return jason_text
 // }
 
-// 
+//
 
 // function main() {
 //     //try:
