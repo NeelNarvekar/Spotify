@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+html{	
+	font-family: 'Open Sans', sans-serif;
+    color: #1ED760;
+    background-color: #1ED760;
+
+}
+
+.Title {
+	border-style: solid;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 75px;	
+	padding: 15px;
+	display: inline-block;
+	border:1px;
+	background-color: rgba(0,0,0,1.0);
+
+}
+
+#submit{
+    background-color: rgba(0,0,0,1.0);
+    color: #1ED760;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: 3px solid;
+}
+
+#SpotifyURLS {
+	background-color: #1ED760;
+}
