@@ -10,7 +10,7 @@ function Main() {
 
 function generateTrackList(songs,trackList) {
     songtxt = '';
-    token = generateToken
+    token = generateToken();
     if (songs.length > 50) {
         for (i = 0; i < 50; i++) {
             songtxt += songs[i] + ',';
@@ -18,7 +18,7 @@ function generateTrackList(songs,trackList) {
         songtxt = songtxt.substring(0,songtxt.length - 1);
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
-        //trackList += printJason(jasonText);
+        trackList += printJason(jasonText);
         //return generateTrackList(songs.substring(51,songs.length), trackList);
     } else {
         for (i = 0; i < songs.length; i++) {
@@ -27,11 +27,10 @@ function generateTrackList(songs,trackList) {
         songtxt = songtxt.substring(0,songtxt.length - 1);
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
-        //trackList += printJason(jasonText);
+        trackList += printJason(jasonText);
         //return trackList;
     }
 }
-
 
 function urlBuild(songtxt) {
     url = 'https://api.spotify.com/v1/tracks?ids=' + songtxt;
@@ -59,11 +58,21 @@ function urlLoad(url, token){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", url, false);
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
-    xmlhttp.send()
-    alert(xmlhttp.responseText)
-    return xmlhttp.responseText
+    xmlhttp.send();
+    return xmlhttp.responseText;
 }
 
+function printJason(jasonText){
+    trackList = [];
+    var totalTracks = JSON.parse(jasonText).tracks;
+    for (i = 0; i < totalTracks.length; i++){
+        var artist = JSON.parse(totalTracks).artists;
+        var artistName = JSON.parse(artist[0]).name;
+        var trackName = JSON.parse(totalTracks).name;
+        trackList.push(artistName + ' - ' + trackName);
+    }
+    alert(trackList);
+}
 //
 
 // function main() {
