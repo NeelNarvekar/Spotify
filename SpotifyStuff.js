@@ -66,12 +66,12 @@ function printJason(jasonText){
     trackList = [];
     var totalTracks = JSON.parse(jasonText).tracks;
     for (i = 0; i < totalTracks.length; i++){
-        var artist = JSON.parse(totalTracks).artists;
-        var artistName = JSON.parse(artist[0]).name;
-        var trackName = JSON.parse(totalTracks).name;
-        trackList.push(artistName + ' - ' + trackName);
+        // var artist = JSON.parse(totalTracks).artists;
+        // var artistName = JSON.parse(artist[0]).name;
+        // var trackName = JSON.parse(totalTracks).name;
+        // trackList.push(artistName + ' - ' + trackName);
     }
-    alert(trackList);
+    alert(jasonText);
 }
 //
 
