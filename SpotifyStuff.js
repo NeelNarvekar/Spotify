@@ -44,16 +44,19 @@ function urlLoad(url) {
 
     var client_id = 'd82d1ee7fe604b56ac800a4e9f8477e0';
     var client_secret = '79689b652261464f8c718b4613369ab2';
-    alert(client_secret);
     var auth_req64 = window.btoa(client_id + ":"+ client_secret);
     xmlhttp.setRequestHeader("Authorization", "Basic ZDgyZDFlZTdmZTYwNGI1NmFjODAwYTRlOWY4NDc3ZTA6Nzk2ODliNjUyMjYxNDY0ZjhjNzE4YjQ2MTMzNjlhYjI=");
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlhttp.send("grant_type=client_credentials");
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+        alert('The ResponseText is '+xmlhttp.responseText);
+        }
+    }
+    //token = JSON.parse(data);
+    //alert(token['access_token']);
 }
-//     var data = xmlhttp.responseText;
-//     token  = JSON.parse(data).access_token;
-//     alert(token);
-// }
 
 
 
