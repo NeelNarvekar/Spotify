@@ -17,8 +17,8 @@ function generateTrackList(songs,trackList) {
         songtxt = songtxt.substring(0,songtxt.length - 1);
         url = urlBuild(songtxt);
         jasonText = urlLoad(url);
-        trackList += printJason(jasonText);
-        return generateTrackList(songs.substring(51,songs.length), trackList);
+        //trackList += printJason(jasonText);
+        //return generateTrackList(songs.substring(51,songs.length), trackList);
     } else {
         for (i = 0; i < songs.length; i++) {
             songtxt += songs[i] + ',';
@@ -41,17 +41,20 @@ function urlLoad(url) {
     var xmlhttp = new XMLHttpRequest();
     var tokenURL = "https://accounts.spotify.com/api/token"
     xmlhttp.open("POST", tokenURL, true);
+
     var client_id = 'd82d1ee7fe604b56ac800a4e9f8477e0';
     var client_secret = '79689b652261464f8c718b4613369ab2';
-
-    var auth_req64 = window.btoa(client_id + ":"+ client_secret);
-    xmlhttp.setRequestHeader("Authorization", "Basic " + auth_req64);
-
-    xmlhttp.send("grant_type=client_credentials");
-    var data = xmlhttp.responseText;
-    token  = JSON.parse(data).access_token;
-    alert(token);
+    alert(client_secret);
 }
+
+//     var auth_req64 = window.btoa(client_id + ":"+ client_secret);
+//     xmlhttp.setRequestHeader("Authorization", "Basic " + auth_req64);
+
+//     xmlhttp.send("grant_type=client_credentials");
+//     var data = xmlhttp.responseText;
+//     token  = JSON.parse(data).access_token;
+//     alert(token);
+// }
 
 
 
@@ -72,12 +75,7 @@ function urlLoad(url) {
 //     return jason_text
 // }
 
-// function printJason(jasonText){
-//     track_list = []
-//     for track in jason_text['tracks']:
-//         track_list.append(track['artists'][0]['name'] + ' - ' + track['name'])
-//     return track_list
-// }
+// 
 
 // function main() {
 //     //try:
