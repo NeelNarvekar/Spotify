@@ -5,7 +5,7 @@ function Main() {
         URLList[i] = URLList[i].substring(14, URLList[i].length);
     }
     track_list = generateTrackList(URLList, []);
-    document.getElementById("Songs").innerHTML = track_list;
+    document.getElementById("Songs").innerHTML = "<br> Here are your songs: <br> <br>" + track_list;
 }
 
 

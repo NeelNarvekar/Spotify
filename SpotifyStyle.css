@@ -23,9 +23,10 @@ html{
     background-color: rgba(0,0,0,1.0);
     color: #1ED760;
     font-size: 16px;
-    /*border: none;
-    cursor: pointer;*/
+    border: none;
+    cursor: pointer;
     border: 3px solid;
+    padding: 5px;
 }
 
 #SpotifyURLS {
@@ -33,5 +34,16 @@ html{
 }
 
 #Songs {
-	color: black;
+	color: #1ED760;
+	border-style: solid;
+	background-color: rgba(0,0,0,1.0);
+	/*padding: 15px;*/
+	display: inline-block;
+	border:1px;
+}
+
+#SpotifyURLS{
+	background-color: black;
+	border-color: black;
+	color: #1ED760;
 }
