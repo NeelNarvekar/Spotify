@@ -11,7 +11,7 @@ function Main() {
 
 function generateTrackList(songs,trackList) {
     songtxt = '';
-    token = generateToken();
+    token = String(window.location).substring(54,197);
     if (songs.length > 50) {
         for (i = 0; i < 50; i++) {
             songtxt += songs[i] + ',';
