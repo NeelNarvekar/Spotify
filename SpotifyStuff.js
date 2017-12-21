@@ -20,7 +20,7 @@ function generateTrackList(songs,trackList) {
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
         trackList += printJason(jasonText);
-        return generateTrackList(songs.toString().substring(50,songs.length), trackList);
+        return generateTrackList(songs.slice(50,songs.length+1), trackList);
     } else {
         for (i = 0; i < songs.length; i++) {
             songtxt += songs[i] + ',';
