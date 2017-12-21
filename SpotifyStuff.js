@@ -5,7 +5,7 @@ function Main() {
         URLList[i] = URLList[i].substring(14, URLList[i].length);
     }
     track_list = generateTrackList(URLList, []);
-    alert(track_list)
+    document.getElementById("Songs").innerHTML = track_list;
 }
 
 
@@ -20,7 +20,7 @@ function generateTrackList(songs,trackList) {
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
         trackList += printJason(jasonText);
-        return generateTrackList(songs.substring(51,songs.length), trackList);
+        return generateTrackList(songs.toString().substring(50,songs.length), trackList);
     } else {
         for (i = 0; i < songs.length; i++) {
             songtxt += songs[i] + ',';
@@ -74,54 +74,7 @@ function printJason(jasonText){
         var trackName = thisTrack.name;
         trackList.push(artistName + ' - ' + trackName);
     }
+    trackList = String(trackList);
+    trackList = trackList.split(',').join('<br>');
     return trackList;
 }
-//
-
-// function main() {
-//     //try:
-
-//     //except FileNotFoundError:
-//         //print('please have a valid songs.txt file')
-// }
-
-// function createSongList() {
-//         //try:
-//         //file = None
-//         // CHANGE TO INPUT GIVEN BY USER file = open('songs.txt', 'r')
-
-// function updateOutputFile() {
-
-// }
-
-// function createOutputFile() {
-
-// }
-
-// import api_interact
-
-// def create_song_list():
-
-
-// def update_output_file(track_list, output_file):
-//     for track in track_list:
-//         try:
-//             if track == ', ':
-//                 pass
-//             else:
-//                 output_file.write(track)
-//                 output_file.write('\n')
-//         except UnicodeEncodeError:
-//             pass
-
-// def create_output_file():
-//     try:
-//         output_file = open('output.txt', 'r')
-//         output_file = open('output.txt', 'w')
-//         print('output.txt found')
-//         return output_file
-//     except FileNotFoundError:
-//         print('output.txt not found')
-//         print('creating output.txt...')
-//         output_file = open('output.txt', 'w')
-//         return output_file

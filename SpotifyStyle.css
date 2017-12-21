@@ -23,11 +23,15 @@ html{
     background-color: rgba(0,0,0,1.0);
     color: #1ED760;
     font-size: 16px;
-    border: none;
-    cursor: pointer;
+    /*border: none;
+    cursor: pointer;*/
     border: 3px solid;
 }
 
 #SpotifyURLS {
 	background-color: #1ED760;
+}
+
+#Songs {
+	color: black;
 }
