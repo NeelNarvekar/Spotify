@@ -74,7 +74,7 @@ function printJason(jasonText){
         var trackName = thisTrack.name;
         trackList.push(artistName + ' - ' + trackName);
     }
-    trackList = String(trackList);
-    trackList = trackList.split(',').join('<br>');
+    //trackList = String(trackList);
+    trackList = trackList.join('<br>');
     return trackList;
 }
