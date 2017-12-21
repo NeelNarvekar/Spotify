@@ -38,22 +38,14 @@ function urlBuild(songtxt) {
     return url;
 }
 
-function generateToken() {
-    var xmlhttp = new XMLHttpRequest();
-    var tokenURL = "https://accounts.spotify.com/api/token"
-    xmlhttp.open("POST", tokenURL, false);
-
-    var client_id = 'd82d1ee7fe604b56ac800a4e9f8477e0';
-    var client_secret = '79689b652261464f8c718b4613369ab2';
-    var auth_req64 = window.btoa(client_id + ":"+ client_secret);
-    xmlhttp.setRequestHeader("Authorization", "Basic " + auth_req64);
-    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xmlhttp.send("grant_type=client_credentials");
-    var data = xmlhttp.responseText;
-    var token = JSON.parse(data).access_token;
-    return token;
+function urlAuthBuild() {
+    baseURL = "https://accounts.spotify.com/authorize?"
+    clientID = "client_id=d82d1ee7fe604b56ac800a4e9f8477e0&"
+    responseType = "response_type=token&"
+    redirectURI = "redirect_uri=https://neelnarvekar.github.io/Spotify/"
+    authURL = baseURL+clientID+responseType+redirectURI
+    window.location = authURL;
 }
-
 
 function urlLoad(url, token){
     var xmlhttp = new XMLHttpRequest();
