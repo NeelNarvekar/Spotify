@@ -11,7 +11,7 @@ function Main() {
 
 function generateTrackList(songs,trackList) {
     songtxt = '';
-    token = String(window.location).substring(54,196);
+    token = String(window.location).substring(53,196);
     alert(token)
     if (songs.length > 50) {
         for (i = 0; i < 50; i++) {
@@ -50,7 +50,7 @@ function urlAuthBuild() {
 
 function urlLoad(url, token){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", url, false);
+    xmlhttp.open("GET", url, true);
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
     xmlhttp.send();
     return xmlhttp.responseText;
