@@ -39,11 +39,11 @@ function urlBuild(songtxt) {
 }
 
 function urlAuthBuild() {
-    baseURL = "https://accounts.spotify.com/authorize?"
-    clientID = "client_id=d82d1ee7fe604b56ac800a4e9f8477e0&"
-    responseType = "response_type=token&"
-    redirectURI = "redirect_uri=https://neelnarvekar.github.io/Spotify/"
-    authURL = baseURL+clientID+responseType+redirectURI
+    baseURL = "https://accounts.spotify.com/authorize?";
+    clientID = "client_id=d82d1ee7fe604b56ac800a4e9f8477e0&";
+    responseType = "response_type=token&";
+    redirectURI = "redirect_uri=https://neelnarvekar.github.io/Spotify/";
+    authURL = baseURL+clientID+responseType+redirectURI;
     window.location = authURL;
 }
 
