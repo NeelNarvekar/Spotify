@@ -72,7 +72,7 @@ function printJason(jasonText){
         var artist = thisTrack.artists[0];
         var artistName = artist.name;
         var trackName = thisTrack.name;
-        trackList.push(artistName + ' - ' + trackName);
+        trackList.push(i + ". " + artistName + ' - ' + trackName);
     }
     //trackList = String(trackList);
     trackList = trackList.join('<br>');
