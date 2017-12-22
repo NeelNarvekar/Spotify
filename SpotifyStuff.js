@@ -57,8 +57,6 @@ function urlAuthBuild() {
 function urlLoad(url, token){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", url, false);
-    //xmlhttp.setRequestHeader("Accept", "application/json");
-    //xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
     xmlhttp.send();
     return xmlhttp.responseText;
@@ -68,7 +66,7 @@ function printJason(jasonText){
     trackList = [];
     var totalJason = JSON.parse(jasonText)
     var totalTracks = totalJason.tracks;
-    var totalImages = totalJason.images;
+    var totalImages = totalJason.album.images[1].url;
     alert(totalImages);
     for (i = 0; i < totalTracks.length; i++){
         var thisTrack = totalTracks[i];
