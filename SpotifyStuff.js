@@ -50,9 +50,10 @@ function urlAuthBuild() {
 function urlLoad(url, token){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", url, true);
-    xmlhttp.setRequestHeader("Accept", "application/json");
-    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    //xmlhttp.setRequestHeader("Accept", "application/json");
+    //xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
+    xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     xmlhttp.send();
     alert(xmlhttp.responseText);
     return xmlhttp.responseText;
@@ -69,7 +70,6 @@ function printJason(jasonText){
         var trackName = thisTrack.name;
         trackList.push(artistName + ' - ' + trackName);
     }
-    //trackList = String(trackList);
     trackList = trackList.join('<br>');
     return trackList;
 }
