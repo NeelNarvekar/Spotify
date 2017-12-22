@@ -12,7 +12,6 @@ function Main() {
 function generateTrackList(songs,trackList) {
     songtxt = '';
     token = String(window.location).substring(53,196);
-    alert(token)
     if (songs.length > 50) {
         for (i = 0; i < 50; i++) {
             songtxt += songs[i] + ',';
@@ -55,6 +54,7 @@ function urlLoad(url, token){
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
     xmlhttp.send();
+    alert(xmlhttp.responseText);
     return xmlhttp.responseText;
 }
 
