@@ -54,7 +54,6 @@ function urlLoad(url, token){
     //xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
     xmlhttp.send();
-    alert(xmlhttp.responseText);
     return xmlhttp.responseText;
 }
 
