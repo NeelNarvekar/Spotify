@@ -53,7 +53,7 @@ function urlLoad(url, token){
     //xmlhttp.setRequestHeader("Accept", "application/json");
     //xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
-    xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     xmlhttp.send();
     alert(xmlhttp.responseText);
     return xmlhttp.responseText;
