@@ -67,10 +67,14 @@ function urlLoad(url, token){
 function printJason(jasonText){
     trackList = [];
     var totalJason = JSON.parse(jasonText)
-    var totalTracks = totalJason.tracks
+    var totalTracks = totalJason.tracks;
+    var totalImages = totalJason.images;
     for (i = 0; i < totalTracks.length; i++){
-        var thisTrack = totalTracks[i]
+        var thisTrack = totalTracks[i];
+        var thisImage = totalImages[i];
         var artist = thisTrack.artists[0];
+        var image = thisImage.url;
+        alert(image);
         var artistName = artist.name;
         var trackName = thisTrack.name;
         trackList.push(artistName); 
