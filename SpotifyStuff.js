@@ -9,7 +9,7 @@ function Main() {
     var screenWidth = screen.width/4;
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Art</font></u></b></td></tr></table><br>";
     for (i = 1; i < track_list.length; i = i + 2) {
-            html += "<table><tr><td width=\""+screenWidth+"\">" + track_list[i-1] + "</td><td width=\""+screenWidth+"\">" + track_list[i] + "</td><td width=\""+screenWidth+"\">" + track_list[i-1] + "</td><td width=\""+screenWidth+"\">" + track_list[i] + "</td></tr></table><br>";
+            html += "<table><tr><td width=\""+screenWidth+"\">" + i + ". " + track_list[i-1] + "</td><td width=\""+screenWidth+"\">" + track_list[i] + "</td><td width=\""+screenWidth+"\">" + track_list[i-1] + "</td><td width=\""+screenWidth+"\">" + track_list[i] + "</td></tr></table><br>";
     }
     document.getElementById("testing").innerHTML = html;
 }
