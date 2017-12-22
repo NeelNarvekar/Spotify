@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 
 html{	
+	background: url(potback4.png) no-repeat center center fixed; 
 	font-family: 'Open Sans', sans-serif;
-    color: #1ED760;
-    background-color: #1ED760;
-
+    color: #98ff98;
+    /*background-color: #1ED760;*/
 }
 
 .Title {
@@ -15,13 +15,13 @@ html{
 	padding: 15px;
 	display: inline-block;
 	border:1px;
-	background-color: rgba(0,0,0,1.0);
+	background-color: rgba(0,0,0,0.8);
 
 }
 
 #submit{
-    background-color: rgba(0,0,0,1.0);
-    color: #1ED760;
+    background-color: rgba(0,0,0,0.8);
+    color: #98ff98;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -30,20 +30,35 @@ html{
 }
 
 #SpotifyURLS {
-	background-color: #1ED760;
+	background-color: #98ff98;
 }
 
-#Songs {
-	color: #1ED760;
+/*#Songs,#Artists {
+	color: #98ff98;
 	border-style: solid;
-	background-color: rgba(0,0,0,1.0);
-	/*padding: 15px;*/
+	background-color: rgba(0,0,0,0.8);
+	/*padding: 15px;
 	display: inline-block;
 	border:1px;
-}
+}*/
 
 #SpotifyURLS{
-	background-color: black;
-	border-color: black;
-	color: #1ED760;
+	background-color: rgba(0,0,0,0.8);
+	border-color: rgba(0,0,0,0.8);
+	color: #98ff98;
+}
+
+table{
+	background-color: rgba(0,0,0,0.8);
+	border-color: rgba(0,0,0,0.8);
+	text-align: left;
+	border-collapse:separate; 
+	border-spacing: 15px;
+	display: inline-block;
+	border:3px;
+	border-color: #98ff98;
+	border-style: solid;
+	
+	/*table-layout: fixed*/
+	/*border-spacing: 5px 12px;*/
 }
