@@ -74,12 +74,12 @@ function printJason(jasonText){
         trackList.push(artistName); 
         trackList.push(trackName);
     }
-<<<<<<< HEAD
-    //trackList = String(trackList);
-    // trackList = trackList.join('<br>');
-=======
-    trackList = trackList.join('<br>');
->>>>>>> e26d6b0f0773d34db7d67a0c12e383e0e034aaa7
+// <<<<<<< HEAD
+//     //trackList = String(trackList);
+//     // trackList = trackList.join('<br>');
+// =======
+//     // trackList = trackList.join('<br>');
+// >>>>>>> e26d6b0f0773d34db7d67a0c12e383e0e034aaa7
     return trackList;
 }
 
