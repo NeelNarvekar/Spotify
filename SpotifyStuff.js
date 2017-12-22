@@ -49,11 +49,10 @@ function urlAuthBuild() {
 
 function urlLoad(url, token){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", url, true);
+    xmlhttp.open("GET", url, false);
     //xmlhttp.setRequestHeader("Accept", "application/json");
     //xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
-    xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     xmlhttp.send();
     alert(xmlhttp.responseText);
     return xmlhttp.responseText;
