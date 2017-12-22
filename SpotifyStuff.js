@@ -74,7 +74,7 @@ function printJason(jasonText){
         var thisTrack = totalTracks[i];
         var thisImage = totalImages[i];
         var artist = thisTrack.artists[0];
-        var image = thisImage.url;
+        var image = thisImage.url[0];
         alert(image);
         var artistName = artist.name;
         var trackName = thisTrack.name;
