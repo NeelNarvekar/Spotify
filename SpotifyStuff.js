@@ -67,11 +67,10 @@ function printJason(jasonText){
     var totalJason = JSON.parse(jasonText)
     var totalTracks = totalJason.tracks;
     var totalAlbum = totalTracks.album;
-    var totalImages = totalAlbum.images[1];
-    var imageURL = totalImages.url;
-    alert(totalImages);
-    var images = totalTracks.album.images[1].url;
-    alert(images);
+    var totalImages = totalAlbum.images;
+    var imageSize = totalImages[1];
+    var imageURL = imageSize.url
+    alert(imageURL);
     for (i = 0; i < totalTracks.length; i++){
         var thisTrack = totalTracks[i];
         var thisImage = totalImages[i];
