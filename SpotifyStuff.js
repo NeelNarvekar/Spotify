@@ -6,7 +6,6 @@ function Main() {
     }
     var track_list = generateTrackList(URLList, []);
     track_list = track_list.split(",");
-    alert(track_list);
     var screenWidth = screen.width/4;
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Art</font></u></b></td></tr></table><br>";
     var k = 1;
@@ -81,7 +80,6 @@ function printJason(jasonText){
         totalElements.push(trackName);
         totalElements.push(imageURL);
         totalElements.push(previewURL);
-        alert(totalElements);
     }
 // <<<<<<< HEAD
 //     //trackList = String(trackList);
