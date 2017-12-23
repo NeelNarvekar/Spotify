@@ -103,7 +103,7 @@ function printJason(jasonText){
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Art</font></u></b></td></tr></table><br>";
     var k = 1;
     for (i = 3; i < totalTrackElements.length; i = i + 4) {
-            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + totalTrackElements[i-3] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i-2] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i-1] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i] + "</td></tr></table><br>";
+            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + totalTrackElements[i-3][0] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i-2][1] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i-1][2] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i][3] + "</td></tr></table><br>";
             k = k + 1;
     }
     document.getElementById("testing").innerHTML = html;
