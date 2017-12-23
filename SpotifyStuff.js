@@ -10,7 +10,7 @@ function Main() {
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Art</font></u></b></td></tr></table><br>";
     var k = 1;
     for (i = 3; i < track_list.length; i = i + 4) {
-            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + track_list[i][0] + "</td><td width=\""+screenWidth+"\">" + track_list[i][1] + "</td><td width=\""+screenWidth+"\">" + track_list[i][2] + "</td><td width=\""+screenWidth+"\">" + track_list[i][3] + "</td></tr></table><br>";
+            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + track_list[i-3] + "</td><td width=\""+screenWidth+"\">" + track_list[i-2] + "</td><td width=\""+screenWidth+"\">" + track_list[i-1] + "</td><td width=\""+screenWidth+"\">" + track_list[i] + "</td></tr></table><br>";
             k = k + 1;
     }
     document.getElementById("testing").innerHTML = html;
@@ -81,8 +81,16 @@ function printJason(jasonText){
         elements.push(trackName);
         elements.push(imageURL);
         elements.push(previewURL);
+        
         totalTrackElements.push(elements);
     }
+
+
+//     var x = new Array(10);
+// for (var i = 0; i < 10; i++) {
+//   x[i] = new Array(20);
+// }
+// x[5][12] = 3.0;
 // <<<<<<< HEAD
 //     //trackList = String(trackList);
 //     // trackList = trackList.join('<br>');
