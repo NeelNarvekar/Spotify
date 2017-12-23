@@ -59,18 +59,13 @@ function urlLoad(url, token){
     xmlhttp.open("GET", url, false);
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
     xmlhttp.send();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            return xmlhttp.responseText;
-        }
-      };
+    return xmlhttp.responseText;
 }
 
 function printJason(jasonText){
     trackList = [];
     var totalJason = JSON.parse(jasonText)
     var totalTracks = totalJason.tracks;
-    alert(imageURL);
     for (i = 0; i < totalTracks.length; i++){
         var thisTrack = totalTracks[i];
         var thisAlbum = thisTrack.album;
