@@ -97,6 +97,7 @@ function printJason(jasonText){
 // =======
 //     // trackList = trackList.join('<br>');
 // >>>>>>> e26d6b0f0773d34db7d67a0c12e383e0e034aaa7
+    console.log(totalTrackElements)
     return totalTrackElements;
 }
 
