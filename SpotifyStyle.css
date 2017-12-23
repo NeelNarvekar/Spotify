@@ -5,7 +5,8 @@ html{
 	/* background: url(potback4.png) no-repeat center center fixed;  */
 	font-family: 'Open Sans', sans-serif;
     color: #98ff98;
-    background-color: rgb(53,125,237);
+    background-color: #98ff98;
+    /*background-color: rgb(53,125,237);*/
 }
 
 .Title {
