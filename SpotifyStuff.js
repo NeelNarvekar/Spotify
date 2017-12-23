@@ -56,7 +56,7 @@ function urlAuthBuild() {
 
 function urlLoad(url, token){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", url, true);
+    xmlhttp.open("GET", url, false);
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function() {
