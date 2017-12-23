@@ -26,7 +26,7 @@ function generateTrackList(songs,trackList) {
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
         alert(typeof trackList);
-        trackList += printJason(jasonText);
+        trackList = trackList.concat(printJason(jasonText));
         alert(typeof trackList);
         return generateTrackList(songs.slice(50,songs.length+1), trackList);
     } else {
@@ -37,7 +37,7 @@ function generateTrackList(songs,trackList) {
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
         alert(typeof trackList);
-        trackList += printJason(jasonText);
+        trackList = trackList.concat(printJason(jasonText));
         alert(typeof trackList);
         return trackList;
     }
