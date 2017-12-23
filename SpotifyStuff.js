@@ -99,6 +99,7 @@ function printJason(jasonText){
         elements.push(previewURL);
         
         totalTrackElements.push(elements);
+        alert(type of totalTrackElements);
     }
 
 
