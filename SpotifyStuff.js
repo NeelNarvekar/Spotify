@@ -56,24 +56,28 @@ function urlAuthBuild() {
 
 function urlLoad(url, token){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", url, false);
+    xmlhttp.open("GET", url, true);
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
     xmlhttp.send();
-    return xmlhttp.responseText;
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            return xmlhttp.responseText;
+        }
+      };
 }
 
 function printJason(jasonText){
     trackList = [];
     var totalJason = JSON.parse(jasonText)
     var totalTracks = totalJason.tracks;
-    var totalAlbum = totalTracks.album;
-    var totalImages = totalAlbum.images;
-    var imageSize = totalImages[1];
-    var imageURL = imageSize.url
     alert(imageURL);
     for (i = 0; i < totalTracks.length; i++){
         var thisTrack = totalTracks[i];
-        var thisImage = totalImages[i];
+        var thisAlbum = thisTrack.album;
+        var thisAlbumCover = thisAlbum.images;
+        var imageSize = thisAlbumCover[1];
+        var imageURL = imageSize.url
+        alert(imageUrl)
         var artist = thisTrack.artists[0];
         alert(artist);
         var image = thisImage.url[0];
