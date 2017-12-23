@@ -77,10 +77,10 @@ function printJason(jasonText){
         var artistName = artist.name;
         var trackName = thisTrack.name;
         var previewURL = thisTrack.preview_url;
-        alert(artistName);
-        alert(trackName);
-        alert(imageURL);
-        alert(previewURL);
+        // alert(artistName);
+        // alert(trackName);
+        // alert(imageURL);
+        // alert(previewURL);
         if (artistName == null) {
             artistName = "N/a";
         }
