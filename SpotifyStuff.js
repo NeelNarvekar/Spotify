@@ -93,10 +93,15 @@ function printJason(jasonText){
         if (previewURL == null) {
             previewURL = "N/a";
         }
-        elements.push(artistName); 
+        elements.push(artistName);
+        alert(typeof artistName) 
         elements.push(trackName);
+        alert(typeof trackName);
         elements.push(imageURL);
+        alert(typeof imageURL);
         elements.push(previewURL);
+        alert(typeof previewURL);
+        alert(typeof elements);
         
         totalTrackElements.push(elements);
         alert(typeof totalTrackElements);
