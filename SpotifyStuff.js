@@ -8,7 +8,7 @@ function Main() {
     var screenWidth = screen.width/4;
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Album Art</font></u></b></td></tr></table><br><br>";
     var k = 1;
-    for (i = 0; i < totalTrackElements.length; i++) {
+    for (i = 0; i < track_list.length; i++) {
             html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + track_list[i][0] + "</td><td width=\""+screenWidth+"\">" + track_list[i][1] + "</td><td width=\""+screenWidth+"\">" + "<audio controls><source src=\"" + track_list[i][3] + "\"/></audio></td><td width=\""+screenWidth+"\">" + "<img src=\"" + track_list[i][2] + "\"style=\"width:150px;height:150px;\"></td></tr></table><br><br>";
             k = k + 1;
     }
