@@ -65,7 +65,7 @@ function urlLoad(url, token){
 function printJason(jasonText){
     totalElements = [];
     totalArtists = [];
-    totalTracks = [];
+    totalTrackNames = [];
     totalImageURLs = [];
     totalPreviewURLs = [];
     var totalJason = JSON.parse(jasonText)
@@ -81,12 +81,12 @@ function printJason(jasonText){
         var trackName = thisTrack.name;
         var previewURL = thisTrack.preview_url;
         totalArtists.push(artistName); 
-        totalTracks.push(trackName);
+        totalTrackNames.push(trackName);
         totalImageURLs.push(imageURL);
         totalPreviewURLs.push(previewURL);
     }
     totalElements.push(totalArtists);
-    totalElements.push(totalTracks);
+    totalElements.push(totalTrackNames);
     totalElements.push(totalImageURLs);
     totalElements.push(totalPreviewURLs);
     alert(totalElements);
