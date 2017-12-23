@@ -63,11 +63,14 @@ function urlLoad(url, token){
 }
 
 function printJason(jasonText){
-    trackList = [];
+    totalElements = [];
+    totalArtists = [];
+    totalTracks = [];
+    totalImageURLs = [];
+    totalPreviewURLs = [];
     var totalJason = JSON.parse(jasonText)
     var totalTracks = totalJason.tracks;
     for (i = 0; i < totalTracks.length; i++){
-        trackElements = []
         var thisTrack = totalTracks[i];
         var thisAlbum = thisTrack.album;
         var thisAlbumCover = thisAlbum.images;
@@ -77,19 +80,23 @@ function printJason(jasonText){
         var artistName = artist.name;
         var trackName = thisTrack.name;
         var previewURL = thisTrack.preview_url;
-        trackElements.push(artistName); 
-        trackElements.push(trackName);
-        trackElements.push(imageURL);
-        trackElements.push(previewURL);
-        trackList.push(trackElements);
+        totalArtists.push(artistName); 
+        totalTracks.push(trackName);
+        totalImageURLs.push(imageURL);
+        totalPreviewURLs.push(previewURL);
     }
+    totalElements.push(totalArtists);
+    totalElements.push(totalTracks);
+    totalElements.push(totalImageURLs);
+    totalElements.push(totalPreviewURLs);
+    alert(totalElements);
 // <<<<<<< HEAD
 //     //trackList = String(trackList);
 //     // trackList = trackList.join('<br>');
 // =======
 //     // trackList = trackList.join('<br>');
 // >>>>>>> e26d6b0f0773d34db7d67a0c12e383e0e034aaa7
-    return trackList;
+    return totalElements;
 }
 
     
