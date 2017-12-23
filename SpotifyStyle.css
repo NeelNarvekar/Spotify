@@ -30,7 +30,7 @@ html{
 #submit,#export{
     background-color: rgba(0,0,0,0.8);
     color: #98ff98;
-    font-size: 16px;
+    /*font-size: 16px;*/
     border: none;
     cursor: pointer;
     border: 3px solid;
@@ -40,7 +40,7 @@ html{
 #signIn{
 	background-color: rgba(0,0,0,0.8);
     color: #98ff98;
-    font-size: 16px;
+    /*font-size: 16px;*/
     border: none;
     cursor: pointer;
     border: 3px solid;
