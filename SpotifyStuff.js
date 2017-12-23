@@ -63,6 +63,7 @@ function urlLoad(url, token){
 }
 
 function printJason(jasonText){
+    trackElements = []
     trackList = [];
     var totalJason = JSON.parse(jasonText)
     var totalTracks = totalJason.tracks;
@@ -76,10 +77,11 @@ function printJason(jasonText){
         var artistName = artist.name;
         var trackName = thisTrack.name;
         var previewURL = thisTrack.preview_url;
-        trackList.push(artistName); 
-        trackList.push(trackName);
-        trackList.push(imageURL);
-        trackList.push(previewURL);
+        trackElements.push(artistName); 
+        trackElements.push(trackName);
+        trackElements.push(imageURL);
+        trackElements.push(previewURL);
+        trackList.push(trackElements);
     }
 // <<<<<<< HEAD
 //     //trackList = String(trackList);
