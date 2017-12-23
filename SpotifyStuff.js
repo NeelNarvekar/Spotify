@@ -4,7 +4,15 @@ function Main() {
     for (i = 0; i < URLList.length; i++) {
         URLList[i] = URLList[i].substring(14, URLList[i].length);
     }
-    generateTrackList(URLList, []);
+    var track_list = generateTrackList(URLList, []);
+    var screenWidth = screen.width/4;
+    var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Album Art</font></u></b></td></tr></table><br><br>";
+    var k = 1;
+    for (i = 0; i < totalTrackElements.length; i++) {
+            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + track_list[i][0] + "</td><td width=\""+screenWidth+"\">" + track_list[i][1] + "</td><td width=\""+screenWidth+"\">" + "<audio controls><source src=\"" + track_list[i][3] + "\"/></audio></td><td width=\""+screenWidth+"\">" + "<img src=\"" + track_list[i][2] + "\"style=\"width:150px;height:150px;\"></td></tr></table><br><br>";
+            k = k + 1;
+    }
+    document.getElementById("testing").innerHTML = html;
 }
 
 function generateTrackList(songs,trackList) {
@@ -17,7 +25,9 @@ function generateTrackList(songs,trackList) {
         songtxt = songtxt.substring(0,songtxt.length - 1);
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
+        alert(typeof trackList);
         trackList += printJason(jasonText);
+        alert(typeof trackList);
         return generateTrackList(songs.slice(50,songs.length+1), trackList);
     } else {
         for (i = 0; i < songs.length; i++) {
@@ -26,7 +36,9 @@ function generateTrackList(songs,trackList) {
         songtxt = songtxt.substring(0,songtxt.length - 1);
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
+        alert(typeof trackList);
         trackList += printJason(jasonText);
+        alert(typeof trackList);
         return trackList;
     }
 }
@@ -95,18 +107,11 @@ function printJason(jasonText){
         //alert(typeof elements);
         
         totalTrackElements.push(elements);
-        //alert(typeof totalTrackElements);
+        alert(typeof totalTrackElements);
     }
     //alert(typeof track_list);
     // track_list = track_list.split(",");
-    var screenWidth = screen.width/4;
-    var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Album Art</font></u></b></td></tr></table><br><br>";
-    var k = 1;
-    for (i = 0; i < totalTrackElements.length; i++) {
-            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + totalTrackElements[i][0] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i][1] + "</td><td width=\""+screenWidth+"\">" + "<audio controls><source src=\"" + totalTrackElements[i][3] + "\"/></audio></td><td width=\""+screenWidth+"\">" + "<img src=\"" + totalTrackElements[i][2] + "\"style=\"width:150px;height:150px;\"></td></tr></table><br><br>";
-            k = k + 1;
-    }
-    document.getElementById("testing").innerHTML = html;
+return totalTrackElements;
 }
 
 
