@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 
 html{	
-	background: url(potback4.png) no-repeat center center fixed; 
+	/* background: url(potback4.png) no-repeat center center fixed;  */
 	font-family: 'Open Sans', sans-serif;
-    color: #98ff98;
+    color: rgb(53,125,237);
     /*background-color: #1ED760;*/
 }
 
