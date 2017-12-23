@@ -5,12 +5,12 @@ function Main() {
         URLList[i] = URLList[i].substring(14, URLList[i].length);
     }
     var track_list = generateTrackList(URLList, []);
-    // track_list = track_list.split(",");
+    track_list = track_list.split(",");
     var screenWidth = screen.width/4;
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Art</font></u></b></td></tr></table><br>";
     var k = 1;
-    for (i = 0; i < track_list.length; i = i + 1) {
-            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + track_list[0][i] + "</td><td width=\""+screenWidth+"\">" + track_list[1][i] + "</td><td width=\""+screenWidth+"\">" + track_list[2][i] + "</td><td width=\""+screenWidth+"\">" + track_list[3][i] + "</td></tr></table><br>";
+    for (i = 3; i < track_list.length; i = i + 4) {
+            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + track_list[i-3] + "</td><td width=\""+screenWidth+"\">" + track_list[i-2] + "</td><td width=\""+screenWidth+"\">" + track_list[i-1] + "</td><td width=\""+screenWidth+"\">" + track_list[i] + "</td></tr></table><br>";
             k = k + 1;
     }
     document.getElementById("testing").innerHTML = html;
