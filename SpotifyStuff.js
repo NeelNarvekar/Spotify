@@ -4,14 +4,10 @@ function Main() {
     for (i = 0; i < URLList.length; i++) {
         URLList[i] = URLList[i].substring(14, URLList[i].length);
     }
-    var screenWidth = screen.width/4;
-    var k = 1;
-    var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Album Art</font></u></b></td></tr></table><br><br>";
-    generateTrackList(URLList, [], html, k);
-    document.getElementById("testing").innerHTML = html;
+    generateTrackList(URLList, []);
 }
 
-function generateTrackList(songs,trackList, html, k) {
+function generateTrackList(songs,trackList) {
     songtxt = '';
     token = String(window.location).substring(53,196);
     if (songs.length > 50) {
@@ -21,7 +17,7 @@ function generateTrackList(songs,trackList, html, k) {
         songtxt = songtxt.substring(0,songtxt.length - 1);
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
-        trackList += printJason(jasonText, html);
+        trackList += printJason(jasonText);
         return generateTrackList(songs.slice(50,songs.length+1), trackList);
     } else {
         for (i = 0; i < songs.length; i++) {
@@ -30,7 +26,7 @@ function generateTrackList(songs,trackList, html, k) {
         songtxt = songtxt.substring(0,songtxt.length - 1);
         url = urlBuild(songtxt);
         jasonText = urlLoad(url, token);
-        trackList += printJason(jasonText, html);
+        trackList += printJason(jasonText);
         return trackList;
     }
 }
@@ -57,7 +53,7 @@ function urlLoad(url, token){
     return xmlhttp.responseText;
 }
 
-function printJason(jasonText, html, k){
+function printJason(jasonText){
     var totalTrackElements = [];
     var totalJason = JSON.parse(jasonText);
     var totalTracks = totalJason.tracks;
@@ -104,12 +100,13 @@ function printJason(jasonText, html, k){
     //alert(typeof track_list);
     // track_list = track_list.split(",");
     var screenWidth = screen.width/4;
+    var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Album Art</font></u></b></td></tr></table><br><br>";
+    var k = 1;
     for (i = 0; i < totalTrackElements.length; i++) {
             html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + totalTrackElements[i][0] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i][1] + "</td><td width=\""+screenWidth+"\">" + "<audio controls><source src=\"" + totalTrackElements[i][3] + "\"/></audio></td><td width=\""+screenWidth+"\">" + "<img src=\"" + totalTrackElements[i][2] + "\"style=\"width:150px;height:150px;\"></td></tr></table><br><br>";
             k = k + 1;
     }
-    return k;
-    return html;
+    document.getElementById("testing").innerHTML = html;
 }
 
 
