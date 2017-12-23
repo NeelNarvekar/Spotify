@@ -62,7 +62,7 @@ function printJason(jasonText){
         var thisTrack = totalTracks[i];
         var thisAlbum = thisTrack.album;
         var thisAlbumCover = thisAlbum.images;
-        var imageSize = thisAlbumCover[2];
+        var imageSize = thisAlbumCover[1];
         var imageURL = imageSize.url
         var artist = thisTrack.artists[0];
         var artistName = artist.name;
@@ -103,7 +103,7 @@ function printJason(jasonText){
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Art</font></u></b></td></tr></table><br><br>";
     var k = 1;
     for (i = 0; i < totalTrackElements.length; i++) {
-            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + totalTrackElements[i][0] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i][1] + "</td><td width=\""+screenWidth+"\">" + "<audio controls><source src=\"" + totalTrackElements[i][3] + "\"/></audio></td><td width=\""+screenWidth+"\">" + "<img src=\"" + totalTrackElements[i][2] + "\"></td></tr></table><br><br>";
+            html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + totalTrackElements[i][0] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i][1] + "</td><td width=\""+screenWidth+"\">" + "<audio controls><source src=\"" + totalTrackElements[i][3] + "\"/></audio></td><td width=\""+screenWidth+"\">" + "<img src=\"" + totalTrackElements[i][2] + "\"style=\"width:50%;height:50%;\"></td></tr></table><br><br>";
             k = k + 1;
     }
     document.getElementById("testing").innerHTML = html;
