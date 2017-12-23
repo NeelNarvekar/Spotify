@@ -82,6 +82,7 @@ function printJason(jasonText){
         trackElements.push(imageURL);
         trackElements.push(previewURL);
         trackList.push(trackElements);
+        alert(trackList);
     }
 // <<<<<<< HEAD
 //     //trackList = String(trackList);
