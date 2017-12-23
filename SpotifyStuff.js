@@ -5,7 +5,7 @@ function Main() {
         URLList[i] = URLList[i].substring(14, URLList[i].length);
     }
     var track_list = generateTrackList(URLList, []);
-    alert(typeof track_list);
+    //alert(typeof track_list);
     // track_list = track_list.split(",");
     var screenWidth = screen.width/4;
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Art</font></u></b></td></tr></table><br>";
@@ -95,17 +95,17 @@ function printJason(jasonText){
             previewURL = "N/a";
         }
         elements.push(artistName);
-        alert(typeof artistName) 
+        //alert(typeof artistName) 
         elements.push(trackName);
-        alert(typeof trackName);
+        //alert(typeof trackName);
         elements.push(imageURL);
-        alert(typeof imageURL);
+        //alert(typeof imageURL);
         elements.push(previewURL);
-        alert(typeof previewURL);
-        alert(typeof elements);
+        //alert(typeof previewURL);
+        //alert(typeof elements);
         
         totalTrackElements.push(elements);
-        alert(typeof totalTrackElements);
+        //alert(typeof totalTrackElements);
     }
 
 
@@ -120,7 +120,7 @@ function printJason(jasonText){
 // =======
 //     // trackList = trackList.join('<br>');
 // >>>>>>> e26d6b0f0773d34db7d67a0c12e383e0e034aaa7
-    console.log(totalTrackElements)
+    //console.log(totalTrackElements)
     return totalTrackElements;
 }
 
