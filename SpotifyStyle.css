@@ -66,9 +66,9 @@ html{
 	color: #98ff98;
 }
 
-/*#testing {
-	font-size: 25px;
-}*/
+#testing {
+	font-size: 20px;
+}
 
 table{
 	background-color: rgba(0,0,0,0.8);
