@@ -5,7 +5,7 @@ function Main() {
         URLList[i] = URLList[i].substring(14, URLList[i].length);
     }
     var track_list = generateTrackList(URLList, []);
-    track_list = track_list.split(",");
+    // track_list = track_list.split(",");
     var screenWidth = screen.width/4;
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Art</font></u></b></td></tr></table><br>";
     var k = 1;
@@ -63,7 +63,7 @@ function urlLoad(url, token){
 }
 
 function printJason(jasonText){
-    totalTrackElements = [];
+    var totalTrackElements = [];
     var totalJason = JSON.parse(jasonText);
     var totalTracks = totalJason.tracks;
     for (i = 0; i < totalTracks.length; i++){
