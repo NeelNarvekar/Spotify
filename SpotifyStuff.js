@@ -8,6 +8,7 @@ function Main() {
     var k = 1;
     var html = "<table><tr><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Artists</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Songs</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Sample Music</font></u></b></td><td width=\""+screenWidth+"\"><b><u><font size=\"5\">Album Art</font></u></b></td></tr></table><br><br>";
     generateTrackList(URLList, [], html, k);
+    document.getElementById("testing").innerHTML = html;
 }
 
 function generateTrackList(songs,trackList, html, k) {
@@ -107,7 +108,8 @@ function printJason(jasonText, html, k){
             html += "<table><tr><td width=\""+screenWidth+"\">" + k + ". " + totalTrackElements[i][0] + "</td><td width=\""+screenWidth+"\">" + totalTrackElements[i][1] + "</td><td width=\""+screenWidth+"\">" + "<audio controls><source src=\"" + totalTrackElements[i][3] + "\"/></audio></td><td width=\""+screenWidth+"\">" + "<img src=\"" + totalTrackElements[i][2] + "\"style=\"width:150px;height:150px;\"></td></tr></table><br><br>";
             k = k + 1;
     }
-    document.getElementById("testing").innerHTML = html;
+    return k;
+    return html;
 }
 
 
