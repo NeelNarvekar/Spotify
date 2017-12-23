@@ -59,7 +59,7 @@ function urlLoad(url, token){
     xmlhttp.open("GET", url, true);
     xmlhttp.setRequestHeader("Authorization", "Bearer " + token);
     xmlhttp.send();
-    xhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             return xmlhttp.responseText;
         }
